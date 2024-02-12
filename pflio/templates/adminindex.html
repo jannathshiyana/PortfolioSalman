@@ -1,0 +1,106 @@
+{% extends "allhead.html" %}
+{% load static %}
+{% block content %}
+
+
+<div class="container">
+
+{% comment %} You are logged in message {% endcomment %}
+
+{% if messages %}
+{% for message  in messages %}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  
+  {{ message }}
+
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %}
+{% endif %}
+
+{% comment %} ***************************** {% endcomment %}
+
+{% comment %} FOR ICON UPLOAD {% endcomment %}
+<br>
+<div class="container" style="border: 2px solid blueviolet;">
+  
+  <a href="{% url "upload-icon" %}"><button class="btn btn-warning btn-sm">Load form for icon upload</button></a>
+  <br>
+<form method="post"  enctype="multipart/form-data">
+  {% csrf_token %}
+  {{ icform.as_p }}
+  <button type="submit">Upload</button>
+</form>
+</div>
+{% comment %} ***************************** {% endcomment %}
+
+<br><br>
+
+{% comment %} FOR PROFILE PICTURE {% endcomment %}
+
+<div class="container" style="border: 2px solid orchid;">
+  
+  <a href="{% url "profile-create" %}"><button class="btn btn-info btn-sm">Load form for profile upload</button></a> 
+  <br>
+<form method="post"  enctype="multipart/form-data">
+  {% csrf_token %}
+  {{ profiles.as_p }}
+  <button type="submit">Upload</button>
+</form>
+</div>
+{% comment %} ***************************** {% endcomment %}
+
+<br><br>
+
+
+{% comment %} FOR PORTFOLIOS {% endcomment %}
+  {% comment %} <div class="container" style="border: 2px solid blue;">
+<a href="{% url "portfolio-create" %}"><button class="btn btn-success btn-sm">Load portfolio upload form</button></a>
+<br>
+
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{ portfolioform.as_p }}
+  {% for f in portfolioformset %}
+  {{ f.as_p }}
+  {% endfor %}
+  <button type="submit"> Save </button>
+
+</form>
+</div> {% endcomment %}
+
+{% comment %} ***************************** {% endcomment %}
+
+
+  <br>
+  {% comment %} FOR TESTIMONIES {% endcomment %}
+  <div class="container" style="border: 2px solid green;">
+  <a href="{% url "testimony" %}"><button class="btn btn-danger btn-sm">Load form for testimonies</button></a>
+  <br>
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Upload</button>
+
+    </form>
+  </div>
+<br>
+{% comment %} ***************************** {% endcomment %}
+
+<br>
+<br>
+<a href="{% url "portfolio-create" %}"><button class="btn btn-outline-success">Load from for portfolio upload &gt;&gt;</button></a>
+
+
+
+{% comment %} ***************************** {% endcomment %}
+ 
+  <br><br><br>
+  <a href="{% url "gallery" %}"><button class="btn btn-outline-success">View gallery</button></a>
+
+  <a href="{% url "logout" %}"><button type="submit" class="btn btn-danger">Logout</button></a>
+  
+
+</div>
+
+{% endblock  %}

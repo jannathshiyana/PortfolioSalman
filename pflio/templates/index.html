@@ -1,0 +1,460 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Salmanul Faris</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  
+  {% load static %}
+
+  <!-- Favicons -->
+  <link href="{% static 'img/portfolio_351456.png' %}" rel="icon">
+  <link href="{% static 'img/portfolio_351456.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: iPortfolio
+  * Updated: Nov 17 2023 with Bootstrap v5.3.2
+  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Mobile nav toggle button ======= -->
+  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="d-flex flex-column">
+ 
+      <div class="profile">
+        {% if ic %}
+
+      <img src="{{ ic.icon.url }}" alt="{{ ic.name }}" class="img-fluid rounded-circle">
+      {% else %}
+      <img src="{% static 'img/profile-img.png' %}" alt="Reconnect" class="img-fluid rounded-circle">
+      {% endif %}
+
+        <h1 class="text-light"><a href="index.html">Salmanul Faris</a></h1>
+        <div class="social-links mt-3 text-center">
+          <a href="https://www.instagram.com/salmanfaris100?igsh=NHowbjhrMDFhN2Ro" class="instagram" target="_blank"><i class="bx bxl-instagram"></i></a>
+          <a href="http://linkedin.com/in/salman-faris-95b14a2aa" class="linkedin" target="_blank"><i class="bx bxl-linkedin"></i></a>
+        </div>
+      </div>
+      <nav id="navbar" class="nav-menu navbar">
+        <ul>
+          <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
+          <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
+          <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
+          <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
+          <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
+        </ul>
+      </nav><!-- .nav-menu -->
+      
+
+      {% if messages %}
+      {% for message  in messages %}
+      <div class="alert alert-primary alert-dismissible fade show" role="alert">
+        
+        {{ message }}
+      
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      {% endfor %}
+      {% endif %}
+      
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+    <div class="hero-container" data-aos="fade-in">
+      <h1>Salmanul Faris</h1>
+      <p>I'm <span class="typed" data-typed-items="an Interior Designer, an Exterior Designer, a Freelancer, a Photographer"></span></p>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+  
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>About</h2>
+          <p>Bachelor in Computer Application with passion and expertise in Design, Innovation and powerful imagination.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4" data-aos="fade-right">
+            {% if prof %}
+            <img src="{{ prof.profile.url }}" class="img-fluid" alt="">
+            {% endif %}
+          </div>
+          <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+            <h3>Interior &amp; Exterior Designer.</h3>
+            <p class="fst-italic">
+              I have mastered AutoDesk's AutoCAD, 3Ds MAX, and Lumion, and I can use them to create stunning architectural designs and renderings.
+            </p>
+            <div class="row">
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>20 May 2002</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>www.example.com******</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+91 8592 815692</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Origin:</strong> <span>Malappuram, Kerala, India</span></li>
+                </ul>
+              </div>
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>22</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>BCA</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>salmankfaris100@gmail.com</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
+                </ul>
+              </div>
+            </div>
+            <p>
+              I am a passionate Designer who loves to create stunning designs and renderings using AutoDesk's AutoCAD, 3Ds MAX, and Lumion. I have mastered these tools and I can apply them to any project, from residential to commercial, from interior to exterior. I have a keen eye for detail, a creative flair, and a strong sense of aesthetics. I enjoy working with clients and delivering solutions that exceed their expectations.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+    
+  
+    <!-- ======= Skills Section ======= -->
+    <section id="skills" class="skills section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Skills</h2>
+          <p> I am proficient in AutoCAD, 3Ds MAX, and Lumion, and I can use them to draft, model, and render realistic and detailed 3D images. I have a strong background in computer applications, with a Bachelor's degree from University of Calicut. I always seek to learn new technologies and tools and I can collaborate effectively with clients and team members. I always strive to generate original and unique concepts for architectural projects.</p>
+        </div>
+
+        <div class="row skills-content">
+
+          <div class="col-lg-6" data-aos="fade-up">
+
+            <div class="progress">
+              <span class="skill">Drafting <i class="val">100%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">Modeling <i class="val">90%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">Rendering <i class="val">90%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="progress">
+              <span class="skill">Design <i class="val">95%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">Communication <i class="val">75%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">Creativity <i class="val">80%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Skills Section -->
+
+    <!-- ======= Resume Section ======= -->
+    <section id="resume" class="resume">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Resume</h2>
+          <p>Designer by profession and passion along with strong foundation in Computer Applications and skills in all aspects of life. Aiming at upgrading skills all day, every day. Always a learner and willing to work however hard to achieve goals deemed impossible.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6" data-aos="fade-up">
+            <h3 class="resume-title">Summary</h3>
+            <div class="resume-item pb-0">
+              <h4>Salman Faris</h4>
+              <p><em>Innovative and goal-driven Interior Designer proficient in AutoCAD with 3Ds Max and Lumion.</em></p>
+              <ul>
+                <li>Pang, Malappuram, Kerala, India</li>
+                <li>+91 8592 815692</li>
+                <li>salmankfaris100@gmail.com</li>
+              </ul>
+            </div>
+
+            <h3 class="resume-title">Education</h3>
+            <div class="resume-item">
+              <h4>Bachelor of Computer Applications</h4>
+              <h5>2020 - 2023</h5>
+              <p><em>University of Calicut, Kerala</em></p>
+              <p>Graduated degree in Bachelor of Computer Application from <br>St. Mary's College, Puthanangadi, Kerala. </p>
+            </div>
+            <div class="resume-item">
+              <h4>High School</h4>
+              <h5>2018 - 2020</h5>
+              <p><em>Al Farooque School, Padapparamba</em></p>
+              <p>Completed High School education in Science stream with Computer Science form Al Farooque School.</p>
+            </div>
+          </div>
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="resume-title">Professional Background</h3>
+            <div class="resume-item">
+              <h4>Certificate course in AutoDesk's AutoCAD</h4>
+              <h5>2023 - 6 months duration</h5>
+              <p><em>CADD Centre, Perinthalmanna </em></p>
+              <ul>
+                <li>Completed AutoCAD software with optimal training to draft flawless creations of both interior and exterior.</li>
+                <li>Trained in 3Ds Max to create stunning models of residential and commercial structures.</li>
+                <li>Rendered the designs using Lumion and executed the project precisely.</li>
+                <li>The designs created were original and accepted by the trainers as one of the best projects.</li>
+                <li>During the training period, multiple projects were created to apply all the concepts learned and to complete live commercial projects.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Resume Section -->
+
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio section-bg">
+      <div class="container">
+
+        
+
+        <div class="section-title">
+          <h2>Portfolio</h2>
+          <p>A showcase of all personal best.</p>
+        </div>
+
+        <div class="row" data-aos="fade-up">
+          <div class="col-lg-12 d-flex justify-content-center">
+            <ul id="portfolio-flters">
+              <li data-filter="*" class="filter-active">All</li>
+              <li data-filter=".filter-interior">Interior</li>
+              <li data-filter=".filter-exterior">Exterior</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
+          {% for portfolio in portfolios %}
+          {% if portfolio.category == "interior" %}
+          <div class="col-lg-4 col-md-6 portfolio-item filter-interior">
+            {% elif portfolio.category == "exterior" %}
+            <div class="col-lg-4 col-md-6 portfolio-item filter-exterior">
+              {% endif %}
+            <div class="portfolio-wrap">
+              <img src="{{ portfolio.img.url }}" class="img-fluid" alt="">
+              <div class="portfolio-links">
+                <a href="{{ portfolio.img.url }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{ portfolio.name }}"><i class="bx bx-plus"></i></a>
+                <a href="{% url "portfolio-details" portfolio.pk %}" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+
+
+
+
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Section -->
+
+
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Testimonials</h2>
+          <p>Know more from people who invested their time and effort in these projects.</p>
+        </div>
+
+        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+
+            {% for tests in testimonies %}
+            <div class="swiper-slide">
+              <div class="testimonial-item" data-aos="fade-up">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  {{ tests.testimony }}
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <img src="{{ tests.picture.url }}" class="testimonial-img" alt="">
+                <h3>{{ tests.name }}</h3>
+                <h4>{{ tests.designation }}</h4>
+              </div>
+            </div><!-- End testimonial item -->
+            {% endfor %}
+          </div>
+          
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section><!-- End Testimonials Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Contact</h2>
+          <p>Get in touch for quality works that match your aesthetics.</p>
+        </div>
+
+        <div class="row" data-aos="fade-in">
+
+          <div class="col-lg-5 d-flex align-items-stretch">
+            <div class="info">
+              <div class="address">
+                <i class="bi bi-geo-alt"></i>
+                <h4>Location:</h4>
+                <p>Pang, Malappuram, 679338</p>
+              </div>
+
+              <div class="email">
+                <i class="bi bi-envelope"></i>
+                <h4>Email:</h4>
+                <p>salmankfaris100@gmail.com</p>
+              </div>
+
+              <div class="phone">
+                <i class="bi bi-phone"></i>
+                <h4>Call:</h4>
+                <p>+91 8592 81 5692</p>
+              </div>
+
+              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7833.65778380151!2d76.22483622098024!3d10.976284684594928!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7ca7ea0e747f7%3A0x1ddcad005d4eb682!2sPadapparamba-Pang-Valanchery%20Rd%2C%20Pang%2C%20Kerala%20679338!5e0!3m2!1sen!2sin!4v1704960293467!5m2!1sen!2sin" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+            </div>
+           
+          </div>
+
+          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+            <form action="{% url "contact" %}" method="post" role="form" class="php-email-form">
+              {% csrf_token %}
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label for="name">Your Name</label>
+                  <input type="text" name="name" class="form-control" id="name" required>
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="name">Your Email</label>
+                  <input type="email" class="form-control" name="email" id="email" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="name">Subject</label>
+                <input type="text" class="form-control" name="subject" id="subject" required>
+              </div>
+              <div class="form-group">
+                <label for="name">Message</label>
+                <textarea class="form-control" name="message" rows="10" required></textarea>
+              </div>
+
+              {% if messages %}
+                <div class="my-3">
+                  {% for message in messages %}
+                    {% if message.tags == "error" %}
+                      <div class="error-message">{{ message }}</div>
+                    {% endif %}
+                    {% if message.tags == "success" %}
+                      <div class="sent-message">{{ message }}</div>
+                    {% endif %}
+                  {% endfor %}
+                </div>
+              {% endif %}
+
+
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <a href="{% url "login" %}"><i class="bi bi-gear"></i></a>
+    </div>
+  </footer><!-- End  Footer -->
+
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+ 
+  <!-- Vendor JS Files -->
+  <script src="{% static 'vendor/purecounter/purecounter_vanilla.js' %}"></script>
+  <script src="{% static 'vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'vendor/typed.js/typed.umd.js' %}"></script>
+  <script src="{% static 'vendor/waypoints/noframework.waypoints.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+{% extends "allhead.html" %}
+{% block content %}
+<div class="container" style="border: 2px solid black;">
+    <a href="{% url "portfolio-create" %}"><button class="btn btn-secondary btn-sm">Load form to create portfolios</button></a>
+
+    <form method="post" enctype="multipart/form-data">
+    
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">add </button>
+    
+    </form>
+    </div>
+{% endblock %}

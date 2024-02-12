@@ -1,0 +1,34 @@
+{% extends "allhead.html" %}
+{% block content %}
+<div class="container">
+    <br><br>
+    <div class="row align-middle">
+        
+        <form method='post' action="{% url "login" %}">
+            {% csrf_token %}
+            <div class="mb-3">
+            <label class="form-label">Username</label>
+            <input type="text" class="form-control" name="username">
+            </div>
+
+            <div class="mb-3">
+            <label class="form-label">Password</label>
+            <input type="password" class="form-control" name="password">
+            </div>
+            
+            <button type="submit" class="btn btn-secondary">Submit</button>
+        </form>
+</div>
+
+{% if messages %}
+{% for message  in messages %}
+<div class="alert alert-primary alert-dismissible fade show" role="alert">
+  
+  {{ message }}
+
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %}
+{% endif %}
+</div>
+{% endblock  %}

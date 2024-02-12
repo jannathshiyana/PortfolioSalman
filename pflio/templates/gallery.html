@@ -1,0 +1,129 @@
+{% extends "allhead.html" %}
+
+{% block content %}
+
+<div class="container"> 
+
+  <div class="container">
+    <br><br>
+    <p class="h2">All icons</p>
+    <table class="table table-bordered">
+    {% for image in ic reversed %}
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Icon</th>
+          <th scope="col">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">{{ image.id }}</th>
+          <td>{{ image.name }}</td>
+          <td><img src="{{ image.icon.url }}" alt="" style="height: 5rem; width: 5rem;"></td>
+          <td><a href="{% url "delete-icon" image.pk %}" class="btn btn-primary">delete</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+
+  <div class="container">
+    <br><br>
+    <p class="h2">All Profile Pictures</p>
+    <table class="table table-bordered">
+    {% for profile in prof reversed %}
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Profile</th>
+          <th scope="col">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">{{ profile.id }}</th>
+          <td>{{ profile.name }}</td>
+          <td><img src="{{ profile.profile.url }}" alt="" style="height: 5rem; width: 5rem;"></td>
+          <td><a href="{% url "delete-prof" profile.pk %}" class="btn btn-primary">delete</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="container">
+    <br><br>
+    <p class="h2">All Testimonies</p>
+    <table class="table table-bordered">
+    {% for test in testimony reversed %}
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Picture</th>
+          <th scope="col">Testimony</th>
+          <th scope="col">Update</th>
+          <th scope="col">Delete</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">{{ test.id }}</th>
+          <td>{{ test.name }}</td>
+          
+          
+          <td><img src="{{ test.picture.url }}" alt="" style="height: 5rem; width: 5rem;"></td>
+          <td>{{ test.testimony }}</td>
+          <td><a href="{% url "update-testimony" test.pk %}" class="btn btn-outline-success">Update</a></td>
+          <td><a href="{% url "delete-testimony" test.pk %}" class="btn btn-outline-danger">Delete</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <br><br>
+
+
+  <div class="container">
+    <br><br>
+    <p class="h2">All Portfolios</p>
+    <table class="table table-bordered">
+    {% for t in port reversed %}
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Title</th>
+          <th scope="col">Thumbnail</th>
+          <th scope="col">Delete</th>
+          <th scope="col">Update</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">{{ t.id }}</th>
+          <td>{{ t.name }}</td>
+          <td>{{ t.title }}</td>
+          <td><img src="{{ t.img.url }}" alt="" style="height: 5rem; width: 5rem;"></td>
+          <td><a href="{% url "portfolio-update" t.pk %}" class="btn btn-outline-success">Update</a></td>
+          <td><a href="{% url "delete-portfolio" t.pk %}" class="btn btn-outline-danger">Delete</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <br><br>
+  <a href="{% url "adminindex" %}"><button class="btn btn-info">&lt;&lt;Back to Main</button></a>
+  <a href="{% url "index" %}"><button class="btn btn-outline-secondary">&lt;&lt;Go to homepage</button></a>
+
+
+</div>
+
+    
+{% endblock %}
