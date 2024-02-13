@@ -10,6 +10,7 @@ from . models import Icon, Portfolio, Profile, Testimony
 from django.core.mail import send_mail
 from django.forms import modelformset_factory
 from django.views.generic import CreateView, ListView, DetailView, UpdateView
+from django.conf import settings
 # Create your views here.
 
 
@@ -202,11 +203,12 @@ def contact(request):
         message_name = request.POST['name']
         message_email = request.POST['email']
         message = request.POST['message']
+        sender_address = f'{message_name}<{message_email}>'
         send_mail(
             subject + ' from ' + message_name,
             message,
-            message_email,
-            ['salmankfarisinfo@gmail.com',]
+            sender_address,
+            [settings.EMAIL_HOST_USER]
         )
         messages.success(request, (f'Sent! I will get back to you soon, {message_name}.'))
         return redirect('index')
